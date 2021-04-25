@@ -21,13 +21,18 @@ $(document).ready(function() {
                 <p class="office">Office: ${employee.office}</p>
                 <div class="contact">
                     <a class="github" href="https://github.com/${employee.gitHub}" target="_blank">GitHub</a>
-                    <a class="linkedin" href="https://github.com/${employee.linkedIn}" target="_blank">LinkedIn</a>
-                    <a class="twitter" href="https://github.com/${employee.twitter}" target="_blank">Twitter</a>
+                    <a class="linkedin" href="https://www.linkedin.com/${employee.linkedIn}" target="_blank">LinkedIn</a>
+                    <a class="twitter" href="https://www.twitter.com/${employee.twitter}" target="_blank">Twitter</a>
                 </div>
             </div>`
         })
 
         $(".cards-wrapper-grid").html(employees);
+    })
+
+    // Button to toggle grid and list view
+    $(".toggle-list").click(function(){
+        $(".cards-wrapper-grid, .cards-wrapper-list").toggleClass("cards-wrapper-grid cards-wrapper-list");
     })
 
 });

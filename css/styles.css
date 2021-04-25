@@ -1,0 +1,17 @@
+img {
+    height: 120px;
+}
+
+/* Display employees as a grid */
+.cards-wrapper-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* Hide links if profile is unavalible */
+.github[href="https://github.com/null"], 
+.linkedIn[href="https://www.linked.com/null"], 
+.twitter[href="https://www.twitter.com/null"] {
+    display: none; 
+}
