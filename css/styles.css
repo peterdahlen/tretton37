@@ -43,13 +43,16 @@ img {
 .control-panel {
     display: flex;
     justify-content: space-between;
-/*     margin: 1em;
-    justify-content: space-between;
-    border-top: 2px solid var(--blue);
-    border-right: 5px solid var(--blue);
-    border-bottom: 5px solid var(--blue);
-    border-left: 2px solid var(--blue);
-    border-radius: 7px; */
+}
+
+.layout-wrapper {
+    display: flex;
+}
+
+.switch-on {
+    background-color: grey;
+    color: black;
+    border-color: black;
 }
 
 .filter-wrapper {
@@ -69,14 +72,14 @@ img {
 }
 
 /* Display employees as a grid */
-.cards-wrapper-grid {
+.grid {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.cards-wrapper-grid .card {
+.grid .card {
     padding: 1em;
     margin: 1em;
     border-top: 1px solid var(--blue);
@@ -88,12 +91,12 @@ img {
     transition: .15s;
 }
 
-.cards-wrapper-grid .card:hover {
+.grid .card:hover {
     transform: scale(1.05);
 }
 
 /* Display employees as a list */
-.cards-wrapper-list .card {
+.list .card {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -106,37 +109,33 @@ img {
     border-radius: 7px;
     transition: .15s;
 }
-.cards-wrapper-list .card:hover {
+.list .card:hover {
     transform: scale(1.02);
 }
 
-.cards-wrapper-list .card .info, .cards-wrapper-list .card .info p {
+.list .card .info, .list .card .info p {
     margin-right: 20px; 
 }
 
-.cards-wrapper-list .card img {
+.list .card img {
     height: 100px;
 }
 
-.cards-wrapper-list .card .info {
+.list .card .info {
     display: flex;
     align-items: baseline;
 }
 
-.cards-wrapper-list .profile, .cards-wrapper-list .info {
+.list .profile, .list .info {
     margin-right: 20px; 
 }
 
-.cards-wrapper-list .contact {
+.list .contact {
     display: flex;
     flex-direction: row;
     align-content: center;
 }
 
-/* .cards-wrapper-list .contact a {
-    margin-bottom: 10px;
-}
- */
 /* Hide links if profile is unavalible */
 .github[href="https://github.com/null"], 
 .linkedIn[href="https://www.linked.com/null"], 

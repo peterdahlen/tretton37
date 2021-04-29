@@ -29,34 +29,55 @@ $(document).ready(function() {
             </div>`
         })
 
-        $(".cards-wrapper-grid").html(employees);
+        $(".cards-wrapper").html(employees);
     })
 
-    // Button to toggle grid and list view
-    $(".toggle-list").click(function(){
-        $(".cards-wrapper-grid, .cards-wrapper-list").toggleClass("cards-wrapper-grid cards-wrapper-list");
+    // Buttons to switch between grid and list layout
+    $(".layout-list").click(function(){
+        $(".layout-grid").removeClass("switch-on");
+        $(".layout-list").addClass("switch-on");
+        $(".cards-wrapper").removeClass("grid").addClass("list");
+    })
+
+    $(".layout-grid").click(function(){
+        $(".layout-list").removeClass("switch-on");
+        $(".layout-grid").addClass("switch-on");
+        $(".cards-wrapper").removeClass("list").addClass("grid");
     })
 
     // Buttons to filter employees by office
     $("#filter-lund").click(function(){
         $(".card").not(".Lund").hide();
+        $("#filter-lund").addClass("switch-on");
+        $("#show-all").removeClass("switch-on");
     })
 
     $("#filter-helsingborg").click(function(){
         $(".card").not(".Helsingborg").hide();
+        $("#filter-helsingborg").addClass("switch-on");
+        $("#show-all").removeClass("switch-on");
     })
 
     $("#filter-sthlm").click(function(){
         $(".card").not(".Stockholm").hide();
+        $("#filter-sthlm").addClass("switch-on");
+        $("#show-all").removeClass("switch-on");
     })
 
     $("#filter-borlange").click(function(){
         $(".card").not(".Borlänge").hide();
+        $("#filter-borlange").addClass("switch-on");
+        $("#show-all").removeClass("switch-on");
     })
 
     $("#show-all").click(function(){
         $(".card").show();
         $(".card").has("img[src='null']").hide();
+        $("#filter-lund").removeClass("switch-on");
+        $("#filter-helsingborg").removeClass("switch-on");
+        $("#filter-sthlm").removeClass("switch-on");
+        $("#filter-borlange").removeClass("switch-on");
+        $("#show-all").addClass("switch-on");
     })
 
 });
