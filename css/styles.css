@@ -1,5 +1,71 @@
+:root {
+    --green: #80C565;
+    --blue: #002B55;
+}
+
+/* Global styles */
+body, a {
+    color: var(--blue);
+}
+
+.btn {
+    background-color: var(--blue);
+    color: var(--green);
+    padding: 1em;
+    margin: 1em;
+    cursor: pointer;
+    border-right: 3px solid var(--green);
+    border-bottom: 3px solid var(--green);
+    border-radius: 7px;
+}
+
 img {
-    height: 120px;
+    height: 150px;
+}
+
+.main-wrapper {
+    padding: 100px;
+}
+
+/* Hero text */
+.hero-text-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 75px; 
+}
+
+.hero-text {
+    font-size: 70px;
+}
+
+/* Control panel */
+.control-panel {
+    display: flex;
+    justify-content: space-between;
+/*     margin: 1em;
+    justify-content: space-between;
+    border-top: 2px solid var(--blue);
+    border-right: 5px solid var(--blue);
+    border-bottom: 5px solid var(--blue);
+    border-left: 2px solid var(--blue);
+    border-radius: 7px; */
+}
+
+.filter-wrapper {
+    display: flex;
+}
+
+.name {
+    font-size: 2em;
+}
+
+.office {
+    font-size: 1.5em;
+}
+
+.contact a {
+    margin-right: .5em;
 }
 
 /* Display employees as a grid */
@@ -7,8 +73,70 @@ img {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
+.cards-wrapper-grid .card {
+    padding: 1em;
+    margin: 1em;
+    border-top: 1px solid var(--blue);
+    border-right: 5px solid var(--blue);
+    border-bottom: 5px solid var(--blue);
+    border-left: 1px solid var(--blue);
+    border-radius: 7px;
+    width: 150px;
+    transition: .15s;
+}
+
+.cards-wrapper-grid .card:hover {
+    transform: scale(1.05);
+}
+
+/* Display employees as a list */
+.cards-wrapper-list .card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1em;
+    margin: 1em;
+    border-top: 1px solid var(--blue);
+    border-right: 5px solid var(--blue);
+    border-bottom: 5px solid var(--blue);
+    border-left: 1px solid var(--blue);
+    border-radius: 7px;
+    transition: .15s;
+}
+.cards-wrapper-list .card:hover {
+    transform: scale(1.02);
+}
+
+.cards-wrapper-list .card .info, .cards-wrapper-list .card .info p {
+    margin-right: 20px; 
+}
+
+.cards-wrapper-list .card img {
+    height: 100px;
+}
+
+.cards-wrapper-list .card .info {
+    display: flex;
+    align-items: baseline;
+}
+
+.cards-wrapper-list .profile, .cards-wrapper-list .info {
+    margin-right: 20px; 
+}
+
+.cards-wrapper-list .contact {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+/* .cards-wrapper-list .contact a {
+    margin-bottom: 10px;
+}
+ */
 /* Hide links if profile is unavalible */
 .github[href="https://github.com/null"], 
 .linkedIn[href="https://www.linked.com/null"], 
