@@ -71,6 +71,10 @@ img {
     margin-right: .5em;
 }
 
+.contact a:hover {
+    color: var(--green);
+}
+
 /* Display employees as a grid */
 .grid {
     display: flex;
@@ -87,7 +91,7 @@ img {
     border-bottom: 5px solid var(--blue);
     border-left: 1px solid var(--blue);
     border-radius: 7px;
-    width: 150px;
+    width: 160px;
     transition: .15s;
 }
 
@@ -108,6 +112,7 @@ img {
     border-left: 1px solid var(--blue);
     border-radius: 7px;
     transition: .15s;
+    max-width: 675px;
 }
 .list .card:hover {
     transform: scale(1.02);
@@ -123,7 +128,7 @@ img {
 
 .list .card .info {
     display: flex;
-    align-items: baseline;
+    align-items: center;
 }
 
 .list .profile, .list .info {
@@ -141,4 +146,16 @@ img {
 .linkedIn[href="https://www.linked.com/null"], 
 .twitter[href="https://www.twitter.com/null"] {
     display: none; 
+}
+
+/* Media queries */
+@media screen and (max-width: 1025px) {
+    .control-panel {
+        display: flex;
+        flex-direction: column;
+    }
+    .filter-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
