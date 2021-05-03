@@ -14,8 +14,8 @@ body, a {
     padding: 1em;
     margin: 1em;
     cursor: pointer;
-    border-right: 3px solid var(--green);
-    border-bottom: 3px solid var(--green);
+    border-right: 4px solid var(--green);
+    border-bottom: 4px solid var(--green);
     border-radius: 7px;
 }
 
@@ -27,6 +27,14 @@ img {
     padding: 100px;
 }
 
+.brand-background {
+    background-color: var(--blue);
+    color: var(--green);
+    border-right: 4px solid var(--green);
+    border-bottom: 4px solid var(--green);
+    border-radius: 7px;
+}
+
 /* Hero text */
 .hero-text-wrapper {
     display: flex;
@@ -36,17 +44,25 @@ img {
 }
 
 .hero-text {
-    font-size: 70px;
+    font-size: 4em;
+    padding: 20px;  
 }
 
 /* Control panel */
 .control-panel {
     display: flex;
     justify-content: space-between;
+    font-size: .8em;
 }
 
 .layout-wrapper {
     display: flex;
+}
+
+.list-layout, .grid-layout {
+    height: 40px;
+    width: 40px;
+    
 }
 
 .switch-on {
@@ -59,16 +75,18 @@ img {
     display: flex;
 }
 
+/* Card styles */
 .name {
-    font-size: 2em;
+    font-size: 1em;
+    padding: 10px;
 }
 
 .office {
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .contact a {
-    margin-right: .5em;
+    margin-right: 1em;
 }
 
 .contact a:hover {
@@ -91,7 +109,6 @@ img {
     border-bottom: 5px solid var(--blue);
     border-left: 1px solid var(--blue);
     border-radius: 7px;
-    width: 160px;
     transition: .15s;
 }
 
@@ -141,6 +158,21 @@ img {
     align-content: center;
 }
 
+/* Floating scroll to top button  */
+.scroll-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    font-size: 1em;
+    display: none;
+    z-index: 999;
+    text-align: center;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+}
+
 /* Hide links if profile is unavalible */
 .github[href="https://github.com/null"], 
 .linkedIn[href="https://www.linked.com/null"], 
@@ -150,6 +182,12 @@ img {
 
 /* Media queries */
 @media screen and (max-width: 1025px) {
+    .main-wrapper {
+        padding: 20px;
+    }
+    .hero-text-wrapper {
+        margin: 20px 0;
+    }
     .control-panel {
         display: flex;
         flex-direction: column;
@@ -157,5 +195,8 @@ img {
     .filter-wrapper {
         display: flex;
         flex-wrap: wrap;
+    }
+    .list .card .info, .list .card .info p {
+        margin-right: 10px;
     }
 }

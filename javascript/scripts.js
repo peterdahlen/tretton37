@@ -18,7 +18,7 @@ $(document).ready(function() {
             <div class="card ${employee.office}" tabindex="0">
                 <img class="profile" src="${employee.imagePortraitUrl}" alt="This is a beautiful profile picture of ${employee.name}" onerror="this.parentNode.style.display='none'">
                 <div class="info">
-                    <p class="name">${employee.name}</p>
+                    <p class="name brand-background ">${employee.name}_</p>
                     <p class="office">${employee.office}</p>
                 </div>
                 <div class="contact">
@@ -35,49 +35,66 @@ $(document).ready(function() {
     // Buttons to switch between grid and list layout
     $(".layout-list").click(function(){
         $(".layout-grid").removeClass("switch-on");
-        $(".layout-list").addClass("switch-on");
+        $(this).addClass("switch-on");
         $(".cards-wrapper").removeClass("grid").addClass("list");
     })
 
     $(".layout-grid").click(function(){
         $(".layout-list").removeClass("switch-on");
-        $(".layout-grid").addClass("switch-on");
+        $(this).addClass("switch-on");
         $(".cards-wrapper").removeClass("list").addClass("grid");
     })
 
     // Buttons to filter employees by office
-    $("#filter-lund").click(function(){
-        $(".card").not(".Lund").hide();
-        $("#filter-lund").addClass("switch-on");
-        $("#show-all").removeClass("switch-on");
+    $("#filterLund").click(function(){
+        $(".card").not(".Lund").fadeOut();
+        $(".filter").not(".filter-lund").fadeOut();
+        $(this).addClass("switch-on");
+        $("#showAll").removeClass("switch-on");    
     })
 
-    $("#filter-helsingborg").click(function(){
-        $(".card").not(".Helsingborg").hide();
-        $("#filter-helsingborg").addClass("switch-on");
-        $("#show-all").removeClass("switch-on");
+    $("#filterHelsingborg").click(function(){
+        $(".card").not(".Helsingborg").fadeOut();
+        $(".filter").not(".filter-helsingborg").fadeOut();
+        $(this).addClass("switch-on");
+        $("#showAll").removeClass("switch-on");
     })
 
-    $("#filter-sthlm").click(function(){
-        $(".card").not(".Stockholm").hide();
-        $("#filter-sthlm").addClass("switch-on");
-        $("#show-all").removeClass("switch-on");
+    $("#filterSthlm").click(function(){
+        $(".card").not(".Stockholm").fadeOut();
+        $(".filter").not(".filter-sthlm").fadeOut();
+        $(this).addClass("switch-on");
+        $("#showAll").removeClass("switch-on");
     })
 
-    $("#filter-borlange").click(function(){
-        $(".card").not(".Borlänge").hide();
-        $("#filter-borlange").addClass("switch-on");
-        $("#show-all").removeClass("switch-on");
+    $("#filterBorlange").click(function(){
+        $(".card").not(".Borlänge").fadeOut();
+        $(".filter").not(".filter-borlange").fadeOut();
+        $(this).addClass("switch-on");
+        $("#showAll").removeClass("switch-on");
     })
 
-    $("#show-all").click(function(){
-        $(".card").show();
+    $("#showAll").click(function(){
+        $(".card").fadeIn();
+        $(".filter").fadeIn();
         $(".card").has("img[src='null']").hide();
-        $("#filter-lund").removeClass("switch-on");
-        $("#filter-helsingborg").removeClass("switch-on");
-        $("#filter-sthlm").removeClass("switch-on");
-        $("#filter-borlange").removeClass("switch-on");
-        $("#show-all").addClass("switch-on");
+        $(this).addClass("switch-on");
+        $("#filterLund").removeClass("switch-on");
+        $("#filterHelsingborg").removeClass("switch-on");
+        $("#filterSthlm").removeClass("switch-on");
+        $("#filterBorlange").removeClass("switch-on");   
     })
+    
+    // Scroll to top button
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 400) { //If scrolled past 400px
+          $('.scroll-to-top').fadeIn(); //Show button
+        } else {
+          $('.scroll-to-top').fadeOut(); //Hide button
+        }
+      });
+      $('.scroll-to-top').click(function(){ 
+        $('html, body').animate({scrollTop : 0},1000);
+      });
 
 });
