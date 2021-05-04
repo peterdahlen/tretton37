@@ -4,8 +4,10 @@
 }
 
 /* Global styles */
-body, a {
+body, 
+a {
     color: var(--blue);
+    font-family: 'Lato';
 }
 
 .btn {
@@ -24,7 +26,7 @@ img {
 }
 
 .main-wrapper {
-    padding: 100px;
+    padding: 0 100px;
 }
 
 .brand-background {
@@ -45,7 +47,32 @@ img {
 
 .hero-text {
     font-size: 4em;
-    padding: 20px;  
+    font-family: 'Abril Fatface';
+    letter-spacing: 2px;
+    border-right: 3px solid var(--blue);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: 
+        typewriter 2s steps(14) normal, 
+        caret 0.8s infinite;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 10ch;
+    }
+}
+
+@keyframes caret {
+    0%, 100% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--green);
+    }
 }
 
 /* Control panel */
@@ -59,7 +86,8 @@ img {
     display: flex;
 }
 
-.list-layout, .grid-layout {
+.list-layout, 
+.grid-layout {
     height: 40px;
     width: 40px;
     
@@ -135,7 +163,8 @@ img {
     transform: scale(1.02);
 }
 
-.list .card .info, .list .card .info p {
+.list .card .info, 
+.list .card .info p {
     margin-right: 20px; 
 }
 
@@ -148,7 +177,8 @@ img {
     align-items: center;
 }
 
-.list .profile, .list .info {
+.list .profile, 
+.list .info {
     margin-right: 20px; 
 }
 
@@ -196,7 +226,8 @@ img {
         display: flex;
         flex-wrap: wrap;
     }
-    .list .card .info, .list .card .info p {
+    .list .card .info, 
+    .list .card .info p {
         margin-right: 10px;
     }
 }

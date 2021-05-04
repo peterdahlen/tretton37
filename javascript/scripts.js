@@ -18,7 +18,7 @@ $(document).ready(function() {
             <div class="card ${employee.office}" tabindex="0">
                 <img class="profile" src="${employee.imagePortraitUrl}" alt="This is a beautiful profile picture of ${employee.name}" onerror="this.parentNode.style.display='none'">
                 <div class="info">
-                    <p class="name brand-background ">${employee.name}_</p>
+                    <p class="name brand-background ">${employee.name}</p>
                     <p class="office">${employee.office}</p>
                 </div>
                 <div class="contact">
